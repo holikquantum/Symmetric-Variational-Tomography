@@ -16,6 +16,7 @@ import numpy as np
 from scipy import linalg as la
 from itertools import permutations
 import itertools
+import math
 
 import sympy
 
@@ -145,7 +146,7 @@ def Lists(L, N):
 def Symmetrizer(L):
     Perm = list(permutations(L))
     symm = sum(
-        (1 / np.math.factorial(len(L))) * KroneckerMultiplyList_SP(a) for a in Perm
+        (1 / math.factorial(len(L))) * KroneckerMultiplyList_SP(a) for a in Perm
     )
     return symm
 
